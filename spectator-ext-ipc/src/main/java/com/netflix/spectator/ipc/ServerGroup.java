@@ -189,8 +189,12 @@ public class ServerGroup {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     ServerGroup that = (ServerGroup) o;
     return d1 == that.d1
         && d2 == that.d2

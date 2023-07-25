@@ -128,7 +128,9 @@ public final class PercentileBuckets {
         results[pctIdx] = f * (nextB - prevB) + prevB;
         ++pctIdx;
       }
-      if (pctIdx >= pcts.length) break;
+      if (pctIdx >= pcts.length) {
+        break;
+      }
       prev = next;
       prevP = nextP;
       prevB = nextB;

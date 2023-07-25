@@ -32,7 +32,7 @@ import java.util.TreeMap;
 
 class JmxBean implements DynamicMBean {
 
-  private static MBeanServer MBEAN_SERVER = ManagementFactory.getPlatformMBeanServer();
+  private static final MBeanServer MBEAN_SERVER = ManagementFactory.getPlatformMBeanServer();
 
   static void register(JmxBean bean) throws Exception {
     if (MBEAN_SERVER.isRegistered(bean.id)) {

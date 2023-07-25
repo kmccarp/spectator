@@ -92,9 +92,9 @@ public class HttpRequestBuilder {
   private final URI uri;
   private final IpcLogEntry entry;
   private String method = "GET";
-  private Map<String, String> reqHeaders = new LinkedHashMap<>();
+  private final Map<String, String> reqHeaders = new LinkedHashMap<>();
   private byte[] entity = HttpUtils.EMPTY;
-  private boolean reuseResponseStreams = false;
+  private boolean reuseResponseStreams;
 
   private int connectTimeout = 1000;
   private int readTimeout = 30000;
@@ -103,8 +103,8 @@ public class HttpRequestBuilder {
   private long initialRetryDelay = 1000L;
   private int numAttempts = 3;
 
-  private HostnameVerifier hostVerifier = null;
-  private SSLSocketFactory sslFactory = null;
+  private HostnameVerifier hostVerifier;
+  private SSLSocketFactory sslFactory;
 
   /** Create a new instance for the specified URI. */
   public HttpRequestBuilder(IpcLogger logger, URI uri) {

@@ -59,8 +59,12 @@ public final class BasicTag implements Tag {
   }
 
   @Override public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null || !(obj instanceof BasicTag)) return false;
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || !(obj instanceof BasicTag)) {
+      return false;
+    }
     BasicTag other = (BasicTag) obj;
     return key.equals(other.key) && value.equals(other.value);
   }
