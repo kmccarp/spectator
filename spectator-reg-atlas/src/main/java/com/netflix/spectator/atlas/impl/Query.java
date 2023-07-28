@@ -231,8 +231,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof And)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof And)) {
+        return false;
+      }
       And other = (And) obj;
       return q1.equals(other.q1) && q2.equals(other.q2);
     }
@@ -282,8 +286,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Or)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Or)) {
+        return false;
+      }
       Or other = (Or) obj;
       return q1.equals(other.q1) && q2.equals(other.q2);
     }
@@ -338,8 +346,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Not)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Not)) {
+        return false;
+      }
       Not other = (Not) obj;
       return q.equals(other.q);
     }
@@ -465,8 +477,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof InvertedKeyQuery)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof InvertedKeyQuery)) {
+        return false;
+      }
       InvertedKeyQuery other = (InvertedKeyQuery) obj;
       return q.equals(other.q);
     }
@@ -502,8 +518,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Has)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Has)) {
+        return false;
+      }
       Has other = (Has) obj;
       return k.equals(other.k);
     }
@@ -547,8 +567,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Equal)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Equal)) {
+        return false;
+      }
       Equal other = (Equal) obj;
       return k.equals(other.k) && v.equals(other.v);
     }
@@ -612,8 +636,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof In)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof In)) {
+        return false;
+      }
       In other = (In) obj;
       return k.equals(other.k) && vs.equals(other.vs);
     }
@@ -652,8 +680,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof LessThan)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof LessThan)) {
+        return false;
+      }
       LessThan other = (LessThan) obj;
       return k.equals(other.k) && v.equals(other.v);
     }
@@ -692,8 +724,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof LessThanEqual)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof LessThanEqual)) {
+        return false;
+      }
       LessThanEqual other = (LessThanEqual) obj;
       return k.equals(other.k) && v.equals(other.v);
     }
@@ -732,8 +768,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof GreaterThan)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof GreaterThan)) {
+        return false;
+      }
       GreaterThan other = (GreaterThan) obj;
       return k.equals(other.k) && v.equals(other.v);
     }
@@ -772,8 +812,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof GreaterThanEqual)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof GreaterThanEqual)) {
+        return false;
+      }
       GreaterThanEqual other = (GreaterThanEqual) obj;
       return k.equals(other.k) && v.equals(other.v);
     }
@@ -839,8 +883,12 @@ public interface Query {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Regex)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Regex)) {
+        return false;
+      }
       Regex other = (Regex) obj;
       return k.equals(other.k)
           && v.equals(other.v)

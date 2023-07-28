@@ -82,7 +82,7 @@ public final class Functions {
    */
   public static <T> ToDoubleFunction<T> invokeMethod(final Method method) {
     method.setAccessible(true);
-    return (obj) -> {
+    return obj -> {
       try {
         final Number n = (Number) method.invoke(obj);
         return n.doubleValue();

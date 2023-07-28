@@ -86,8 +86,12 @@ public final class EvalPayload {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     EvalPayload payload = (EvalPayload) o;
     return timestamp == payload.timestamp
         && metrics.equals(payload.metrics)
@@ -136,8 +140,12 @@ public final class EvalPayload {
     }
 
     @Override public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
       Metric metric = (Metric) o;
       return Double.compare(metric.value, value) == 0
           && id.equals(metric.id)
@@ -182,8 +190,12 @@ public final class EvalPayload {
     }
 
     @Override public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
       Message msg = (Message) o;
       return id.equals(msg.id) && message.equals(msg.message);
     }
@@ -225,8 +237,12 @@ public final class EvalPayload {
     }
 
     @Override public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
       DiagnosticMessage msg = (DiagnosticMessage) o;
       return type == msg.type && message.equals(msg.message);
     }

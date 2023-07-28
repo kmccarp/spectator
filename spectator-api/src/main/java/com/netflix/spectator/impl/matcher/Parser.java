@@ -192,7 +192,8 @@ class Parser {
       case 'V':
         throw unsupported("vertical whitespace class");
       case 'P':
-        invert = true;
+      invert = true;
+      break;
       case 'p':
         return newNamedCharSet(name(), invert);
       default:
@@ -367,7 +368,9 @@ class Parser {
   }
 
   private char advance() {
-    if (!isAtEnd()) current++;
+    if (!isAtEnd()) {
+      current++;
+    }
     return previous();
   }
 

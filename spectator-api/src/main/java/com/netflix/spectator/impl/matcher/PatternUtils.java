@@ -269,8 +269,9 @@ public final class PatternUtils {
     for (Matcher matcher : seqMatcher.matchers()) {
       if (results.isEmpty()) {
         List<Matcher> rs = expandOrClauses(matcher, max);
-        if (rs == null)
+        if (rs == null) {
           return null;
+        }
         for (Matcher m : rs) {
           List<Matcher> tmp = new ArrayList<>();
           tmp.add(m);
@@ -278,8 +279,9 @@ public final class PatternUtils {
         }
       } else {
         List<Matcher> rs = expandOrClauses(matcher, max);
-        if (rs == null || results.size() * rs.size() > max)
+        if (rs == null || results.size() * rs.size() > max) {
           return null;
+        }
         List<List<Matcher>> tmp = new ArrayList<>(results.size() * rs.size());
         for (List<Matcher> ms : results) {
           for (Matcher r : rs) {
@@ -338,10 +340,12 @@ public final class PatternUtils {
     // Keep processing until no lookaheads remain
     removeNextLookahead(matcher, results);
     while (results[2] != null) {
-      if (results[0] != null)
+      if (results[0] != null) {
         exprs.add(PatternExpr.simple(results[0]));
-      if (results[1] != null)
+      }
+      if (results[1] != null) {
         exprs.add(PatternExpr.not(PatternExpr.simple(results[1])));
+      }
       removeNextLookahead(results[2], results);
     }
 
@@ -352,10 +356,12 @@ public final class PatternUtils {
     }
 
     // Add final expression
-    if (results[0] != null)
+    if (results[0] != null) {
       exprs.add(PatternExpr.simple(results[0]));
-    if (results[1] != null)
+    }
+    if (results[1] != null) {
       exprs.add(PatternExpr.not(PatternExpr.simple(results[1])));
+    }
     return PatternExpr.and(exprs);
   }
 

@@ -71,7 +71,7 @@ afterEvaluate {
 task checkShadowJar {
   doLast {
     configurations.archives.allArtifacts.forEach {
-      if (it.name == "spectator-reg-atlas" && it.extension == "jar") {
+      if ("spectator-reg-atlas".equals(it.name) && "jar".equals(it.extension)) {
         Set<String> metadataFiles = [
             "META-INF/MANIFEST.MF",
             "META-INF/services/com.netflix.spectator.api.Registry",
