@@ -141,8 +141,12 @@ public class SeqServerGroup {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     SeqServerGroup that = (SeqServerGroup) o;
     return d1 == that.d1
         && d2 == that.d2

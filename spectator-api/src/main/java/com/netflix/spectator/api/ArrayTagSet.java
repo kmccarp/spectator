@@ -474,14 +474,22 @@ final class ArrayTagSet implements TagList {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     ArrayTagSet other = (ArrayTagSet) o;
-    if (length != other.length) return false;
+    if (length != other.length) {
+      return false;
+    }
 
     for (int i = 0; i < length; ++i) {
-      if (!tags[i].equals(other.tags[i])) return false;
+      if (!tags[i].equals(other.tags[i])) {
+        return false;
+      }
     }
     return true;
   }

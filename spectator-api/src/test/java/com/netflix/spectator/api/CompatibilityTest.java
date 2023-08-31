@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class CompatibilityTest {
 
-  private static List<String> EXPECTED = new ArrayList<>();
+  private static final List<String> EXPECTED = new ArrayList<>();
   static {
     EXPECTED.add("Measurement(bucket-counter-age:bucket=062ms,1234567890,63.0)");
     EXPECTED.add("Measurement(bucket-counter-age:bucket=125ms,1234567890,63.0)");

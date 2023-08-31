@@ -38,7 +38,9 @@ public class DefaultHttpClientTest {
   private static void ignore(InputStream input) throws IOException {
     try (InputStream in = input) {
       byte[] buf = new byte[1024];
-      while (in.read(buf) > 0);
+      while (in.read(buf) > 0) {
+        continue;
+      }
     }
   }
 

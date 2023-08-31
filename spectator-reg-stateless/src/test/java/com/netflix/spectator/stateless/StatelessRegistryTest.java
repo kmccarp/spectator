@@ -28,8 +28,8 @@ import java.util.concurrent.TimeUnit;
 
 public class StatelessRegistryTest {
 
-  private ManualClock clock = new ManualClock();
-  private StatelessRegistry registry = new StatelessRegistry(clock, newConfig());
+  private final ManualClock clock = new ManualClock();
+  private final StatelessRegistry registry = new StatelessRegistry(clock, newConfig());
 
   private StatelessConfig newConfig() {
     ConcurrentHashMap<String, String> props = new ConcurrentHashMap<>();

@@ -114,7 +114,9 @@ final class MappingExpr {
         default:
           if (part.startsWith("{") && part.endsWith("}")) {
             Number v = vars.get(part.substring(1, part.length() - 1));
-            if (v == null) v = Double.NaN;
+            if (v == null) {
+              v = Double.NaN;
+            }
             stack.addFirst(v.doubleValue());
           } else {
             stack.addFirst(Double.parseDouble(part));

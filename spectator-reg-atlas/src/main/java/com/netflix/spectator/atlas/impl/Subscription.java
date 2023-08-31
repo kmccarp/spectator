@@ -92,8 +92,12 @@ public final class Subscription {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     Subscription that = (Subscription) o;
     return frequency == that.frequency
         && equalsOrNull(id, that.id)

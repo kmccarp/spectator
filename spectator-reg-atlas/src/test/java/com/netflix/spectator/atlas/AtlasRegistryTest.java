@@ -241,7 +241,7 @@ public class AtlasRegistryTest {
   public void shutdownWithoutStarting() {
     AtlasRegistry r = new AtlasRegistry(
         Clock.SYSTEM,
-        k -> k.equals("atlas.enabled") ? "true" : null);
+        k -> "atlas.enabled".equals(k) ? "true" : null);
     r.close();
   }
 
@@ -288,7 +288,7 @@ public class AtlasRegistryTest {
   private double getValue(PublishPayload payload) {
     return payload.getMetrics()
         .stream()
-        .filter(m -> m.id().name().equals("test"))
+        .filter(m -> "test".equals(m.id().name()))
         .mapToDouble(Measurement::value)
         .sum();
   }

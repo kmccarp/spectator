@@ -163,8 +163,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof All)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof All)) {
+        return false;
+      }
       All other = (All) obj;
       return query.equals(other.query);
     }
@@ -232,8 +236,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Sum)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Sum)) {
+        return false;
+      }
       Sum other = (Sum) obj;
       return query.equals(other.query) && queryTags.equals(other.queryTags);
     }
@@ -298,8 +306,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Min)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Min)) {
+        return false;
+      }
       Min other = (Min) obj;
       return query.equals(other.query) && queryTags.equals(other.queryTags);
     }
@@ -364,8 +376,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Max)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Max)) {
+        return false;
+      }
       Max other = (Max) obj;
       return query.equals(other.query) && queryTags.equals(other.queryTags);
     }
@@ -432,8 +448,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof Count)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof Count)) {
+        return false;
+      }
       Count other = (Count) obj;
       return query.equals(other.query) && queryTags.equals(other.queryTags);
     }
@@ -524,8 +544,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof GroupBy)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof GroupBy)) {
+        return false;
+      }
       GroupBy other = (GroupBy) obj;
       return af.equals(other.af) && keys.equals(other.keys);
     }
@@ -600,8 +624,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof DropRollup)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof DropRollup)) {
+        return false;
+      }
       DropRollup other = (DropRollup) obj;
       return af.equals(other.af) && keys.equals(other.keys);
     }
@@ -674,8 +702,12 @@ public interface DataExpr {
     }
 
     @Override public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (!(obj instanceof KeepRollup)) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (!(obj instanceof KeepRollup)) {
+        return false;
+      }
       KeepRollup other = (KeepRollup) obj;
       return af.equals(other.af) && keys.equals(other.keys);
     }
