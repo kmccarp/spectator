@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 class MetricsGaugeAggr implements com.codahale.metrics.Gauge<Double> {
 
-  private ConcurrentLinkedQueue<MetricsGauge> gauges;
+    private final ConcurrentLinkedQueue<MetricsGauge> gauges;
 
   /**
    * Creates a new Aggregate Gauge.
@@ -49,10 +49,11 @@ class MetricsGaugeAggr implements com.codahale.metrics.Gauge<Double> {
       } else {
         final double gaugeVal = gauge.value();
 
-        // When it's NaN means the gauge can be unregistered due to it's reference to the value to extract value
-        // was garbage collected or simple the gauge returned a NaN so i don't count it
-        if (!Double.isNaN(gaugeVal))
-          aggregatedValue = (Double.isNaN(aggregatedValue) ? 0 : aggregatedValue) + gaugeVal;
+          // When it's NaN means the gauge can be unregistered due to it's reference to the value to extract value
+          // was garbage collected or simple the gauge returned a NaN so i don't count it
+          if (!Double.isNaN(gaugeVal)) {
+              aggregatedValue = (Double.isNaN(aggregatedValue) ? 0 : aggregatedValue) + gaugeVal;
+          }
       }
     }
 
