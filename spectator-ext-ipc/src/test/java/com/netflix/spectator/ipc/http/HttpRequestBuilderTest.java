@@ -43,7 +43,7 @@ public class HttpRequestBuilderTest {
   @Test
   public void retry0() throws Exception {
     Assertions.assertThrows(IOException.class,
-        () -> new TestRequestBuilder(() -> { throw new IOException("failed"); }).send());
+        new TestRequestBuilder(() -> { throw new IOException("failed"); })::send);
   }
 
   @Test
@@ -178,7 +178,7 @@ public class HttpRequestBuilderTest {
   @Test
   public void hostnameVerificationWithHTTP() throws IOException {
     Assertions.assertThrows(IllegalStateException.class,
-        () -> new TestRequestBuilder(() -> OK).allowAllHosts());
+        new TestRequestBuilder(() -> OK)::allowAllHosts);
   }
 
   @Test

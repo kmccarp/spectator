@@ -71,7 +71,7 @@ public class EnsureIdTags {
       .withTag("ipc.status.detail", "200")
       .withTag("ipc.result", "success");
 
-  private final Id STAT_ID = BASE_ID.withTag(Statistic.count).withTag(DsType.rate);
+  private static final Id STAT_ID = BASE_ID.withTag(Statistic.count).withTag(DsType.rate);
 
   @Benchmark
   public void newIdMissing(Blackhole bh) {

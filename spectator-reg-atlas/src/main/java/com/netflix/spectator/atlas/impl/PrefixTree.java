@@ -38,7 +38,7 @@ final class PrefixTree<T> {
 
   private static int indexOf(char c) {
     int i = c - FIRST_CHAR;
-    return (i >= TABLE_SIZE) ? -1 : i;
+    return i >= TABLE_SIZE ? -1 : i;
   }
 
   private final Lock lock = new ReentrantLock();
@@ -77,10 +77,11 @@ final class PrefixTree<T> {
    *     Value to associate with the prefix.
    */
   void put(String prefix, T value) {
-    if (prefix == null)
-      values.add(value);
-    else
-      put(prefix, 0, value);
+      if (prefix == null) {
+          values.add(value);
+      } else {
+          put(prefix, 0, value);
+      }
   }
 
   private void put(String prefix, int pos, T value) {
@@ -108,10 +109,11 @@ final class PrefixTree<T> {
    *     Returns true if a value was removed from the tree.
    */
   boolean remove(String prefix, T value) {
-    if (prefix == null)
-      return values.remove(value);
-    else
-      return remove(prefix, 0, value);
+      if (prefix == null) {
+          return values.remove(value);
+      } else {
+          return remove(prefix, 0, value);
+      }
   }
 
   private boolean remove(String prefix, int pos, T value) {
