@@ -85,10 +85,11 @@ public final class PathSanitizer {
       }
 
       if (!segment.isEmpty()) {
-        if (shouldSuppressSegment(segment, allowed))
+        if (shouldSuppressSegment(segment, allowed)) {
           appendIfSpaceAvailable(builder, "-");
-        else
+        } else {
           appendIfSpaceAvailable(builder, segment);
+        }
         ++segmentsAdded;
       }
     }
@@ -114,8 +115,9 @@ public final class PathSanitizer {
       char c = segment.charAt(i);
       if (CONSONANTS.contains(c)) {
         ++sequentialConsonants;
-        if (sequentialConsonants >= maxSequentialConsonants)
+        if (sequentialConsonants >= maxSequentialConsonants) {
           return true;
+        }
       } else {
         sequentialConsonants = 0;
       }

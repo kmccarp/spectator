@@ -164,7 +164,9 @@ public class SchedulerTest {
     });
 
     Assertions.assertTrue(latch.await(60, TimeUnit.SECONDS));
-    while (!f.isDone()); // This will be an endless loop if broken
+    while (!f.isDone()) {
+      continue;
+    } // This will be an endless loop if broken
     s.shutdown();
   }
 
@@ -180,7 +182,9 @@ public class SchedulerTest {
     final AtomicReference<ScheduledFuture<?>> ref = new AtomicReference<>();
     ref.set(s.schedule(opts, () -> {
       try {
-        while (ref.get() == null);
+        while (ref.get() == null) {
+          continue;
+        }
         ref.get().cancel(true);
         Thread.sleep(600000L);
       } catch (InterruptedException e) {

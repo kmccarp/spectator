@@ -68,7 +68,7 @@ public final class PercentileDistributionSummary implements DistributionSummary 
       Registry registry, Id id, long min, long max) {
     Object summary = Utils.computeIfAbsent(
         registry.state(), id, i -> new PercentileDistributionSummary(registry, id, min, max));
-    return (summary instanceof PercentileDistributionSummary)
+    return summary instanceof PercentileDistributionSummary
         ? ((PercentileDistributionSummary) summary).withRange(min, max)
         : new PercentileDistributionSummary(registry, id, min, max);
   }
@@ -188,7 +188,7 @@ public final class PercentileDistributionSummary implements DistributionSummary 
 
   /** Returns a PercentileTimer limited to the specified range. */
   private PercentileDistributionSummary withRange(long min, long max) {
-    return (this.min == min && this.max == max)
+    return this.min == min && this.max == max
         ? this
         : new PercentileDistributionSummary(registry, id, min, max, counters);
   }
